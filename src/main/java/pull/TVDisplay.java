@@ -12,7 +12,7 @@ class TVDisplay implements PullObserver {
     @Override
     public void update() {
         int fahrenheit = weatherStation.getTemperature() * 9 / 5 + 32;
-        setHumidity(weatherStation.getTemperature());
+        setHumidity(weatherStation.getHumidity());
         setTemperature(fahrenheit);
         System.out.println("[TV] Temperatura atual: " + fahrenheit + "°F, Umidade do ar: " + humidity + "%");
     }

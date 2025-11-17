@@ -10,8 +10,10 @@ public class ThermostatDisplay implements PullObserver {
 
     @Override
     public void update() {
-        setTemperature(weatherStation.getTemperature());
-        System.out.println("[THERMOSTAT] Temperatura atual: " + temperature + "°C");
+        if (temperature != weatherStation.getTemperature()) {
+            setTemperature(weatherStation.getTemperature());
+            System.out.println("[THERMOSTAT] Temperatura atual: " + temperature + "°C");
+        }
     }
 
     public void setTemperature(int temperature) {

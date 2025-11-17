@@ -8,7 +8,6 @@ class WeatherStation implements PullSubject {
     private int temperature;
     private int humidity;
 
-
     public void setTemperature(int temperature) {
         this.temperature = temperature;
         notifyObservers();
